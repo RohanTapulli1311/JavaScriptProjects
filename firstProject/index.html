@@ -7,10 +7,29 @@
     <title>Counter</title>
 </head>
 <body>
+    <div>
     <h1>People who entered:</h1>
     <h2 id="count-el">0</h2>
     <button id="increment" onclick="increment()">INCREMENT</button>
     <button id="save" onclick="save()">SAVE</button>
+    
+
+    <p id="save-status">Previous Enteries:</p>
+    <button id="purchase" onclick="ifError()">Purchase now!</button>
+    <p id="error"></p>
     <script src="index.js"></script>
+</div>
+<div class="Calculator">
+    <span id="el-1"></span> &nbsp;
+    <span id="el-2"></span>
+    <br>
+    <button id="add" onclick="add()">ADD</button>
+    <button id="sub" onclick="sub()">SUBTRACT</button>
+    <button id="mul" onclick="mul()">MULTIPLY</button>
+    <button id="divide" onclick="divide()">DIVIDE</button>
+    <h2 id="answer"></h2>
+    <script src="calc.js"></script>
+</div>
+    
 </body>
 </html>
