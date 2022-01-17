@@ -7,15 +7,19 @@ let message = ""
 let messageEl = document.getElementById('message-el')
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+
 // let sumEl = document.querySelector("#sum-el")
 
 let player = {
     name :"Rohan",
-    chips : 145
+    chips : 200
 }
-
 let playerEl = document.getElementById('player-el')
-playerEl.textContent = player.name +": $" +player.chips
+displayPlayerDetails()
+
+function displayPlayerDetails(){
+    playerEl.textContent = player.name +": $" +player.chips
+}
 
 function getRandomCard(){
    let randNum = Math.floor(Math.random()*13)+1
@@ -28,12 +32,23 @@ function getRandomCard(){
    return randNum
 }
 function startGame(){
-    isAlive = true
+    
+    if( player.chips>20){
+        player.chips -=20
+        isAlive = true
+        hasBlackJack =false
     let firstCard = getRandomCard()
     let secondCard = getRandomCard()
     cards = [firstCard,secondCard]
     sum = firstCard + secondCard
+    displayPlayerDetails()
     renderGame()
+    }
+    else{
+        messageEl.textContent = "Sorry, insufficient Chips!"
+        isAlive = false
+    }
+    
 }
 function renderGame(){
    // cardsEl.textContent ="Cards:"+ cards[0] + " " +cards[1]
@@ -50,6 +65,8 @@ function renderGame(){
         message = "Congrats!! Youve got blackJack!!"
         
         hasBlackJack = true
+        player.chips +=200
+        displayPlayerDetails()
     // make sure u use === alwayss
     }
     else{
