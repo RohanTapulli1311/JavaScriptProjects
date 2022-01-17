@@ -57,3 +57,37 @@ let fastestracer = fastest()
 console.log(fastestracer)
 let totalTime = totaltime()
 console.log(totalTime)
+
+let random = Math.random()
+console.log(random)
+//greetingEl.textContent += random
+
+//dice
+let dice = Math.random() * 6
+dice = Math.floor(dice) + 1
+//Math.floor(Math.random() * 6)
+greetingEl.textContent += dice
+
+
+let airbnbCastle = {
+    isAvailable :true,
+    price: 500,
+    name : "ST. LUTHS VILLE",
+    rooms : [5,6,7,8,9]
+    
+
+}
+
+console.log(airbnbCastle.price)
+console.log(airbnbCastle.rooms[1])
+
+let person ={
+    name:'rohan',
+    age: 20,
+    weigth : 84,
+    sayHello : function(){
+        console.log("welcome!")
+    }
+}
+
+person.sayHello()
