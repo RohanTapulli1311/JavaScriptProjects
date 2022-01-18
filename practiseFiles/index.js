@@ -81,3 +81,10 @@ function sortFruit(){
     }
  }
 }
+//addeventlistner
+
+let openBoxEl = document.getElementById('open-box')
+
+openBoxEl.addEventListener("click", function(){
+    console.log("I want to open the box")
+})

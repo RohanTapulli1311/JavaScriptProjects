@@ -21,3 +21,11 @@ div{
     margin-top: 2px;
     margin-bottom: 2px;
 }
+
+#open-box{
+    width: 50%;
+    height: 50px;
+    background-color: goldenrod;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
