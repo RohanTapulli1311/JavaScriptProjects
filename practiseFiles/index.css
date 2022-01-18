@@ -1,0 +1,23 @@
+div{
+  
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   text-align: center;
+
+}
+
+#apple-shelf{
+    width: 50%;
+    height: 50px;
+    background-color: brown;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+#orange-shelf{
+    width: 50%;
+    height: 50px;
+    background-color: greenyellow;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
