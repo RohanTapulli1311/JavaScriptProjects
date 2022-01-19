@@ -88,3 +88,27 @@ let openBoxEl = document.getElementById('open-box')
 openBoxEl.addEventListener("click", function(){
     console.log("I want to open the box")
 })
+
+const divEl = document.getElementById('container')
+
+divEl.innerHTML = "<button onclick='buy()'>Buy Now!</button>"
+
+function buy(){
+    divEl.innerHTML +="<p>thanks for buying!</p>"
+    //divEl.textContent="thanks for buying!"
+}
+
+//practise template strings
+
+const recipient ="James"
+
+const email1 ="Hey "+ recipient+"! How is it going bro? hope u are fine"
+const email2 =`Hey ${recipient}! How is it going bro? hope u are fine`
+console.log(email1)
+console.log(email2)
+
+const sender = "Rohan"
+const email3 =`Hey ${recipient}!
+How is it going bro? hope u are fine. 
+Cheers ${sender}`
+console.log(email3)
