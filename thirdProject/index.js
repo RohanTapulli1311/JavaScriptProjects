@@ -14,6 +14,7 @@ const inputEl = document.getElementById('input-el')
 const inputBtn = document.getElementById('input-btn')
 const ulEl = document.getElementById('ul-el')
 const delBtn = document.getElementById('delete-btn')
+const saveTab = document.getElementById('save-btn')
 //both key and value in localStorage should be strings
 // thus we JSON.stringify() and JSON.parse() methods to pass array into localStorage
 
@@ -54,6 +55,25 @@ inputBtn.addEventListener("click", function(){
         render(myLeads)
         console.log(localStorage.getItem("myLeads"))
     }
+    
+})
+
+// const tabs = [
+//     {
+//     url: 'https://www.linkedin.com/feed/'
+// }
+// ]
+saveTab.addEventListener("click", function(){
+    // chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+    //     let activeTab = tabs[0]
+    // });
+
+    chrome.tabs.query({active:true, currentWindow:true},function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
+        console.log(localStorage.getItem("myLeads"))
+    })
     
 })
 
