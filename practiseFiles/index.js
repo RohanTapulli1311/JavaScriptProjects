@@ -112,3 +112,47 @@ const email3 =`Hey ${recipient}!
 How is it going bro? hope u are fine. 
 Cheers ${sender}`
 console.log(email3)
+
+let myCourses = ["JavaScript","React","Django","ML","Deep Learning"]
+
+function displayCourse(courses){
+    console.log("my courses are:")
+    for(let i=0; i<courses.length;i++){
+        console.log(courses[i])
+    }
+}
+
+displayCourse(myCourses)
+
+//localStorage practise
+
+//localStorage.setItem("myCourses",JSON.stringify(myCourses))
+console.log(JSON.parse(localStorage.getItem("myCourses")))
+
+//sentence generator
+
+function sentenceGenerator(desc, arr){
+    let count =arr.length
+    let sentence = "the "+count+" "+desc+" are "
+    for(let i=0;i<count;i++){
+
+        sentence +=arr[i]+", "
+    }
+    console.log(sentence)
+}
+
+sentenceGenerator("largest countries",["China","India"])
+
+//images
+const imgs=[
+    "images/hip1.jpg",
+    "images/hip2.jpg",
+    "images/hip3.jpg"
+]
+
+const imgDIV = document.getElementById('img-cont')
+imgsdom =""
+for( let i=0;i<imgs.length;i++){
+    imgsdom += `<img class='team-images' src = '${imgs[i]}'>`
+}
+imgDIV.innerHTML = imgsdom
