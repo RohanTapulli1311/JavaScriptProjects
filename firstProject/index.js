@@ -53,3 +53,22 @@ addPoints()
 removePoints()
 removePoints()
 console.log(myPoints)
+
+let greetEl= document.getElementById("greet-el")
+let greetBtn = document.getElementById('name-sub')
+let inputVal = document.getElementById('name')
+greetBtn.addEventListener("click", function(){
+    const name = inputVal.value
+    if(name!=""){
+        greetUser("Howdy Bro", name)         
+    }
+})
+function greetUser(greetIng, name){
+    greetEl.textContent = `${greetIng}, ${name}!`
+}
+
+function reload(arr){
+ return arr[0]
+}
+
+console.log(reload([55,66,77]))
