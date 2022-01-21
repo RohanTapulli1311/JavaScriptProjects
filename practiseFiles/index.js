@@ -150,9 +150,46 @@ const imgs=[
     "images/hip3.jpg"
 ]
 
-const imgDIV = document.getElementById('img-cont')
-imgsdom =""
-for( let i=0;i<imgs.length;i++){
-    imgsdom += `<img class='team-images' src = '${imgs[i]}'>`
+// const imgDIV = document.getElementById('img-cont')
+// imgsdom =""
+// for( let i=0;i<imgs.length;i++){
+//     imgsdom += `<img class='team-images' src = '${imgs[i]}'>`
+// }
+// imgDIV.innerHTML = imgsdom
+
+const welcomeBtn = document.getElementById("welcome-btn")
+
+// welcomeBtn.addEventListener("click",function(){
+//  alert("Hello bro!")
+// })
+
+welcomeBtn.addEventListener("click",function(){
+     let name = prompt("Please Enter your name")
+     if(name!=""){
+         name  = name.toUpperCase()
+         alert(`Welcome back ${name}!!`)
+     }
+    })
+
+let lifeCount = document.getElementById('life-count')
+
+lifeCount.addEventListener("click", function(){
+    let age = prompt("Enter your age here to know time:")
+    if(age> 0 && age < 90){
+        lifeInWeeks(age)
+    }
+    else{
+        alert("Wrong age input!, try again pls")
+        
+    }
+})
+
+function lifeInWeeks(age){
+    const ageLeft = 90 -age
+    let years = ageLeft
+    let remMonths = years*12
+    let remWeeks = years*52
+    let remDays = years*365
+    let message = `You have ${remDays} days, ${remWeeks} weeks, and ${remMonths} months left. `
+    console.log(message)
 }
-imgDIV.innerHTML = imgsdom
