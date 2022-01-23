@@ -193,3 +193,18 @@ function lifeInWeeks(age){
     let message = `You have ${remDays} days, ${remWeeks} weeks, and ${remMonths} months left. `
     console.log(message)
 }
+
+const BMI = document.getElementById('BMI')
+const BMIDisplay = document.getElementById('ur-bmi')
+BMI.addEventListener("click", function(){
+    const weight = prompt("Enter your weigth in KGS")
+    const height = prompt("Enter your height in metres")
+    
+    const bmiVal = Math.round(weight/ Math.pow(height,2))
+    BMIDisplay.textContent = "Your BMI is:"+ bmiVal
+})
+
+function bmiCalculator(weight, height){
+    const bmiVal = Math.round(weight/ Math.pow(height,2))
+    return bmiVal
+}
