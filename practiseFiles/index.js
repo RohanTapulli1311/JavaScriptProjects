@@ -201,10 +201,119 @@ BMI.addEventListener("click", function(){
     const height = prompt("Enter your height in metres")
     
     const bmiVal = Math.round(weight/ Math.pow(height,2))
-    BMIDisplay.textContent = "Your BMI is:"+ bmiVal
+    if(bmiVal < 18.5){
+       BMIDisplay.textContent = "Your BMI is "+ bmiVal +", so you are underweight."
+    }
+    else if(bmiVal >=18.5 && bmiVal <=24.9){
+   BMIDisplay.textContent = "Your BMI is "+ bmiVal +", so you have a normal weight."
+    }
+    else{
+    BMIDisplay.textContent = "Your BMI is "+ bmiVal +", so you are overweight."
+    }
+   
 })
 
 function bmiCalculator(weight, height){
     const bmiVal = Math.round(weight/ Math.pow(height,2))
-    return bmiVal
+    let interpretation =""
+    if(bmiVal < 18.5){
+        interpretation = "Your BMI is "+ bmiVal +", so you are underweight."
+    }
+    else if(bmiVal >=18.5 && bmiVal <=24.9){
+        interpretation = "Your BMI is "+ bmiVal +", so you have a normal weight."
+    }
+    else{
+        interpretation = "Your BMI is "+ bmiVal +", so you are overweight."
+    }
+    return interpretation
+
+}
+const LCBtn = document.getElementById('LC')
+const LCDisplay = document.getElementById('ur-lc-val')
+
+LCBtn.addEventListener("click",function(){
+    const name1 = prompt("Enter first name")
+    const name2 = prompt("Enter second name")
+    let randomVal = Math.floor(Math.random()*100 + 1)
+
+    LCDisplay.textContent = `The percentage of love btwn ${name1} and ${name2} is ${randomVal}%`
+})
+
+function isLeapYear(year){
+    let isLY = ""
+    if(year%4 === 0){
+        if(year % 100 === 0){
+            if(year % 400 === 0){
+                isLY = "Leap year."
+            }
+            else{
+                isLY ="Not a Leap Year"
+            }
+        }
+        else{
+            isLY ="Leap year."
+        }
+
+    }
+    else{
+        isLY ="Not a Leap Year"
+    }
+    return isLY
+}
+
+// array challenge
+ let arr = []
+ let i=1
+function fizzbuzz(){
+if(i%3 === 0 && i%5 === 0){
+   arr.push("fizzbuzz")
+}
+else if(i%3 === 0){
+    arr.push("fizz")
+}
+else if( i%5===0){
+    arr.push("buzz")
+}
+else{
+    arr.push(i)
+}
+ i++
+ console.log(arr)
+}
+
+// aaray challenge 2
+let names = ['Angela','Ben','Jenny','Michael','Chloe']
+
+function whosPaying(names){
+    let index = Math.floor(Math.random()*names.length)
+    let message = `${names[index]} is going to buy lunch today!`
+    return message
+}
+
+// fibonacci series
+
+function fibonacciGenerator(n){
+    let fibo = []
+    let a = 0 
+    let b = 1
+    if(n === 1){
+        fibo.push(a)
+    }
+    else if(n === 2){
+        fibo.push(a)
+        fibo.push(b) 
+    }
+    else{
+        fibo.push(a)
+        fibo.push(b)
+        for( let i=1;i<=n-2;i++){
+         let c= a+b
+         fibo.push(c)
+         a=b
+         b=c
+        }
+    }
+
+
+ return fibo
 }
