@@ -29,3 +29,10 @@ div{
     margin-top: 2px;
     margin-bottom: 2px;
 }
+
+.invisible{
+visibility: hidden;    
+}
+.huge{
+    font-size: 10rem;
+}
