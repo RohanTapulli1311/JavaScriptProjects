@@ -35,3 +35,24 @@ document.querySelector("#family").classList.toggle("invisible")
 document.querySelector("#greet").classList.toggle("huge")
 document.querySelector('#change').textContent = "Bing"
 document.querySelector('#change').setAttribute("href","www.bing.com")
+
+
+function add(num1, num2){
+    return num1+num2
+}
+
+function subtract(num1,num2){
+    return num2-num1
+
+}
+function multiply(num1,num2){
+    return num1*num2
+}
+function divide(num1,num2){
+ return num1/num2
+}
+
+//Higher order function accepts another function as a parameter
+function calculator(num1,num2, operator){
+    return operator(num1,num2)
+}
