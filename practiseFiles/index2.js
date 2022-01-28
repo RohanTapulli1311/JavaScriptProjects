@@ -56,3 +56,39 @@ function divide(num1,num2){
 function calculator(num1,num2, operator){
     return operator(num1,num2)
 }
+
+let houseKeeper1 = {
+    name : 'Jane',
+    WorkPermit : 'yes',
+    Cleaning : ['Bathroom', 'floor','TOILETS'
+    ],
+    yearsOfExperience : 12
+}
+
+console.log(houseKeeper1)
+console.log(houseKeeper1.name)
+
+//constructor function:
+
+let bellBoy1 = new BellBoy("John", 12, "yes", ['English','Hindi'])
+
+console.log(`Welcome our new Bellboy ${bellBoy1.name}!!`)
+
+let HouseKeeper2 = {
+    name :"Ron",
+    yearsOfExperience :12,
+    WorkPermit: "yes",
+    languages :['English'],
+    moveSuitcase : function(){
+        alert("Move the suitcase please")
+    }
+}
+function BellBoy(name, yearsOfExperience, WorkPermit, languages, moveSuitcase){
+    this.name = name
+    this.yearsOfExperience = yearsOfExperience
+    this.WorkPermit = WorkPermit
+    this.languages = languages
+    this.moveSuitcase = function(){
+        alert("Please move the bags")
+    }
+}
