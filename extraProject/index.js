@@ -15,17 +15,32 @@ AddBtn.addEventListener("click" , function(){
  else{
      alert("Input values empty!")
  }
- name=''
- exp=''
- speciality = ''
- lang = ''
+//  name=''
+//  exp=''
+//  speciality = ''
+//  lang = ''
 })
 
 function addBellboy(boy){
    allBellboys.push(boy)
    console.log(allBellboys)
    alert("Added bellboy!")
+   displayBellBoy(boy)
 }
+
+function displayBellBoy(bboy){
+    console.log(bboy)
+   let displayBoy = document.getElementById('display-bellboy')
+   displayBoy.classList.toggle("display")
+   let displayDetails = document.getElementById('details')
+   displayDetails.innerHTML = `name: ${bboy.name}
+                               experience: ${bboy.experience}
+                               speciality: ${bboy.speciality}
+                               Language Preference: ${bboy.language}`
+
+}
+
+
 
 
 
