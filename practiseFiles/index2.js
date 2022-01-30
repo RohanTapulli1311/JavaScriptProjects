@@ -92,3 +92,25 @@ function BellBoy(name, yearsOfExperience, WorkPermit, languages, moveSuitcase){
         alert("Please move the bags")
     }
 }
+
+// callback and events
+//prototype of callback and events:
+
+function anotherEventListener(typeOfEvent, callback){
+
+    const eventThatHappened ={
+        key : 'p',
+        eventType :'keypress',
+        timeOfEvent : 2
+    }
+    if(eventThatHappened.eventType === typeOfEvent){
+        callback(typeOfEvent)
+    }
+}
+
+//example
+
+document.addEventListener("keypress", function(event){
+    console.log("key pressed")
+    alert(event)
+})
