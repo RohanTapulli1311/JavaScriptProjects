@@ -16,6 +16,7 @@ for( let i=0;i<numberOfDrums;i++){
         const btnInnerText = this.innerHTML
         console.log(btnInnerText)
         playAudio(btnInnerText)
+        showAnimation(btnInnerText)
     })
 }
 
@@ -25,6 +26,7 @@ document.addEventListener("keydown", function(event){
  console.log(event)
  const keyVal = event.key
  playAudio(keyVal)
+ showAnimation(keyVal)
 })
 
 // const audio = new Audio(`sounds/crash.mp3`)      
@@ -65,4 +67,13 @@ function playAudio(keyValue){
             console.log("Wrong input chosen")
             break;
     }
+}
+
+function showAnimation(keyValue){
+    console.log(keyValue)
+    const reqBtn = document.querySelector("."+keyValue)
+    reqBtn.classList.add('pressed')
+    setTimeout(function(){
+        reqBtn.classList.remove('pressed')
+    },100)
 }
