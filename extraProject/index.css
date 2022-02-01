@@ -1,0 +1,11 @@
+#container{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+h1{
+   text-align: center;
+}
+.display{
+    visibility: hidden;
+}
