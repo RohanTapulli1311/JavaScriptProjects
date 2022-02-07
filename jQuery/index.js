@@ -79,3 +79,15 @@ $("h1").on("click", function(){
 $(".after").on("click", function(){
     $("h1").slideUp().slideDown().animate({opacity:0.5})
 })
+
+$("img").on('click',function(){
+    console.log("played")
+    const kick = new Audio(`sounds/kick-bass.mp3`)      
+    kick.play()
+})
+
+$('#play').on("click",function(){
+    console.log("played")
+    const kick = new Audio(`sounds/kick-bass.mp3`)      
+    kick.play()
+})
