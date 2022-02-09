@@ -6,20 +6,25 @@ $('.calc-btn').on("click",function(){
     let currentEQ = $('.calc-display').val()
     
     if(this.value==='C'){
-        $('.calc-display').val("")
+        console.log("C FUNC")
+        $('.calc-display').val('')
     }
-    if(this.value==='='){
-        equate(currentEQ)
+    else if(this.value==='='){
+        $('.calc-display').val(eval($('.calc-display').val())) 
     }
+    else if(this.value==='<'){
+        console.log("< FUNC")
+        $('.calc-display').val(currentEQ.substring(0, currentEQ.length -1)) 
+    }
+
     else{
+        console.log("else FUNC")
         $('.calc-display').val($('.calc-display').val()+this.value)
     }
     
 })
 
-function equate(equation) {
 
-  }
 
 
 
